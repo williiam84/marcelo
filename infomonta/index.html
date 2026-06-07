@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Você ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Fundo animado */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:#7df9ff;
+    border-radius:50%;
+    animation: piscar 3s infinite;
+}
+
+@keyframes piscar{
+    50%{
+        opacity:.2;
+    }
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:#7df9ff;
+    text-shadow:0 0 20px #7df9ff;
+    animation: surgir 1.5s ease;
+}
+
+.hero p{
+    margin-top:15px;
+    max-width:700px;
+    font-size:1.2rem;
+    opacity:.8;
+}
+
+@keyframes surgir{
+    from{
+        transform:translateY(50px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+.botao{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#7df9ff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.botao:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #7df9ff;
+}
+
+/* Fotos */
+
+.galeria{
+    padding:100px 10%;
+}
+
+.titulo{
+    text-align:center;
+    color:#7df9ff;
+    font-size:2.5rem;
+    margin-bottom:50px;
+}
+
+.fotos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    overflow:hidden;
+    border-radius:20px;
+    border:1px solid #7df9ff40;
+    transition:.5s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px #7df9ff50;
+}
+
+.card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+/* Carta */
+
+.carta{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.texto{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    font-size:1.1rem;
+    color:#ddd;
+}
+
+/* Contador */
+
+.contador{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.numero{
+    font-size:4rem;
+    color:#7df9ff;
+    text-shadow:0 0 15px #7df9ff;
+}
+
+/* Rodapé */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #222;
+}
+.surpresa{
+    padding:120px 20px;
+    text-align:center;
+}
+
+.surpresa h2{
+    color:#7df9ff;
+    font-size:2.8rem;
+    margin-bottom:20px;
+}
+
+.surpresa p{
+    color:#ccc;
+    margin-bottom:40px;
+}
+
+.btn-surpresa{
+    display:inline-block;
+    text-decoration:none;
+    padding:20px 45px;
+    border-radius:50px;
+    background:linear-gradient(45deg,#7df9ff,#4ecdc4);
+    color:black;
+    font-weight:700;
+    font-size:1.2rem;
+    transition:.4s;
+    animation:pulsar 2s infinite;
+}
+
+.btn-surpresa:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 35px #7df9ff;
+}
+
+@keyframes pulsar{
+    0%{
+        box-shadow:0 0 0 0 rgba(125,249,255,.7);
+    }
+    70%{
+        box-shadow:0 0 0 25px rgba(125,249,255,0);
+    }
+    100%{
+        box-shadow:0 0 0 0 rgba(125,249,255,0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<section class="hero">
+    <h1>❤️ Para o Amor da Minha Vida ❤️</h1>
+    <p>
+        Este site foi feito especialmente para você.
+        Cada foto, cada detalhe e cada animação foram colocados aqui
+        para mostrar o quanto você é importante para mim.
+    </p>
+
+    <button class="botao" onclick="mostrarMensagem()">
+        Clique Aqui
+    </button>
+</section>
+
+<section class="galeria">
+    <h2 class="titulo">Nossos Momentos</h2>
+
+    <div class="fotos">
+        <div class="card">
+            <img src="foto1.jpg">
+        </div>
+
+        <div class="card">
+            <img src="foto2.jpg">
+        </div>
+
+        <div class="card">
+            <img src="foto3.jpg">
+        </div>
+
+        <div class="card">
+            <img src="foto4.jpg">
+        </div>
+    </div>
+</section>
+
+<section class="carta">
+    <h2 class="titulo">Uma Mensagem</h2>
+
+    <p class="texto">
+        Você é uma das melhores coisas que já aconteceram na minha vida.
+        Seu sorriso ilumina meus dias, sua presença torna tudo melhor
+        e cada momento ao seu lado se transforma em uma lembrança especial.
+        Obrigado por existir e por fazer parte da minha história.
+    </p>
+</section>
+<section class="surpresa">
+    <h2>🎁 Tenho uma Surpresa Para Você</h2>
+
+    <p>
+        Clique no botão abaixo quando estiver pronto para descobrir.
+    </p>
+
+    <a href="https://srturl.link/oXor2ZrvyG" class="btn-surpresa">
+        ✨ Clique Aqui Para Ver a Surpresa ✨
+    </a>
+</section>
+<section class="contador">
+    <h2 class="titulo">Eu Te Amo Há</h2>
+    <div class="numero" id="dias">0</div>
+    <p>Dias</p>
+</section>
+
+<footer>
+    Feito com ❤️ especialmente para você.
+</footer>
+
+<script>
+
+// estrelas
+
+for(let i=0;i<100;i++){
+    const star = document.createElement("div");
+    star.classList.add("star");
+
+    star.style.left = Math.random()*100+"%";
+    star.style.top = Math.random()*100+"%";
+
+    star.style.animationDelay = Math.random()*5+"s";
+
+    document.querySelector(".stars").appendChild(star);
+}
+
+// mensagem
+
+function mostrarMensagem(){
+    alert("Você é a pessoa mais especial do mundo ❤️");
+}
+
+// contador
+
+const dataInicio = new Date("2025-01-01");
+
+function atualizarDias(){
+    const hoje = new Date();
+
+    const diferenca =
+    hoje - dataInicio;
+
+    const dias =
+    Math.floor(diferenca / (1000*60*60*24));
+
+    document.getElementById("dias").innerText = dias;
+}
+
+atualizarDias();
+
+</script>
+
+</body>
+</html>
