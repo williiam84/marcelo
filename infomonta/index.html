@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Você ❤️</title>
+
+<title>Para o Amor da Minha Vida ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -15,19 +17,22 @@
     font-family:'Poppins',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#050505;
-    color:white;
+    color:#fff;
     overflow-x:hidden;
 }
 
-/* Fundo animado */
+/* Fundo */
 
 .stars{
     position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
+    inset:0;
+    z-index:-2;
 }
 
 .star{
@@ -36,7 +41,7 @@ body{
     height:3px;
     background:#7df9ff;
     border-radius:50%;
-    animation: piscar 3s infinite;
+    animation:piscar 3s infinite;
 }
 
 @keyframes piscar{
@@ -45,89 +50,120 @@ body{
     }
 }
 
+/* Corações */
+
+.coracao{
+    position:fixed;
+    bottom:-50px;
+    color:#7df9ff;
+    font-size:20px;
+    pointer-events:none;
+    animation:subir 6s linear forwards;
+    z-index:-1;
+}
+
+@keyframes subir{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
 /* Hero */
 
 .hero{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
     padding:20px;
+    background:
+    radial-gradient(circle at center,
+    rgba(125,249,255,.12),
+    transparent 60%);
 }
 
 .hero h1{
-    font-size:4rem;
+    font-size:clamp(2.2rem,6vw,5rem);
     color:#7df9ff;
-    text-shadow:0 0 20px #7df9ff;
-    animation: surgir 1.5s ease;
+    text-shadow:0 0 30px #7df9ff;
+    animation:surgir 1.5s ease;
 }
 
 .hero p{
-    margin-top:15px;
-    max-width:700px;
-    font-size:1.2rem;
-    opacity:.8;
+    margin-top:20px;
+    max-width:800px;
+    color:#ddd;
+    font-size:1.1rem;
+    line-height:1.8;
 }
 
 @keyframes surgir{
     from{
-        transform:translateY(50px);
         opacity:0;
+        transform:translateY(40px);
     }
     to{
-        transform:translateY(0);
         opacity:1;
+        transform:translateY(0);
     }
 }
 
 .botao{
-    margin-top:30px;
-    padding:15px 35px;
+    margin-top:35px;
     border:none;
-    border-radius:50px;
-    background:#7df9ff;
-    color:black;
-    font-weight:bold;
     cursor:pointer;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:700;
+    background:#7df9ff;
+    color:#000;
     transition:.3s;
 }
 
 .botao:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 25px #7df9ff;
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 0 30px #7df9ff;
 }
 
-/* Fotos */
+/* Sessões */
 
-.galeria{
+section{
     padding:100px 10%;
 }
 
 .titulo{
     text-align:center;
-    color:#7df9ff;
-    font-size:2.5rem;
     margin-bottom:50px;
+    font-size:2.5rem;
+    color:#7df9ff;
 }
+
+/* Fotos */
 
 .fotos{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
 .card{
     overflow:hidden;
-    border-radius:20px;
-    border:1px solid #7df9ff40;
-    transition:.5s;
+    border-radius:25px;
+    border:1px solid rgba(125,249,255,.2);
+    transition:.4s;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 0 30px #7df9ff50;
+    box-shadow:0 0 35px rgba(125,249,255,.35);
 }
 
 .card img{
@@ -143,71 +179,43 @@ body{
 
 /* Carta */
 
-.carta{
-    padding:100px 10%;
-    text-align:center;
-}
-
 .texto{
     max-width:900px;
     margin:auto;
-    line-height:1.8;
-    font-size:1.1rem;
+    text-align:center;
+    line-height:2;
     color:#ddd;
 }
 
-/* Contador */
+/* Surpresa */
 
-.contador{
-    padding:100px 20px;
-    text-align:center;
-}
-
-.numero{
-    font-size:4rem;
-    color:#7df9ff;
-    text-shadow:0 0 15px #7df9ff;
-}
-
-/* Rodapé */
-
-footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid #222;
-}
 .surpresa{
-    padding:120px 20px;
     text-align:center;
-}
-
-.surpresa h2{
-    color:#7df9ff;
-    font-size:2.8rem;
-    margin-bottom:20px;
 }
 
 .surpresa p{
     color:#ccc;
-    margin-bottom:40px;
+    margin-bottom:35px;
 }
 
 .btn-surpresa{
     display:inline-block;
     text-decoration:none;
-    padding:20px 45px;
-    border-radius:50px;
-    background:linear-gradient(45deg,#7df9ff,#4ecdc4);
-    color:black;
+    color:#000;
     font-weight:700;
-    font-size:1.2rem;
-    transition:.4s;
+    padding:18px 40px;
+    border-radius:50px;
+    background:linear-gradient(
+        45deg,
+        #7df9ff,
+        #57d9ff
+    );
     animation:pulsar 2s infinite;
+    transition:.4s;
 }
 
 .btn-surpresa:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 35px #7df9ff;
+    transform:scale(1.05);
 }
 
 @keyframes pulsar{
@@ -221,6 +229,74 @@ footer{
         box-shadow:0 0 0 0 rgba(125,249,255,0);
     }
 }
+
+/* Contador */
+
+.contador{
+    text-align:center;
+}
+
+#tempo{
+    font-size:3rem;
+    color:#7df9ff;
+    text-shadow:0 0 20px #7df9ff;
+}
+
+/* Popup */
+
+.popup-bg{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup{
+    width:90%;
+    max-width:450px;
+    background:#111;
+    border:1px solid #7df9ff;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+}
+
+.popup h2{
+    margin-bottom:15px;
+}
+
+.popup button{
+    margin-top:20px;
+    border:none;
+    background:#7df9ff;
+    padding:12px 25px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+/* Reveal */
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.reveal.ativo{
+    opacity:1;
+    transform:translateY(0);
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #222;
+    color:#aaa;
+}
+
 </style>
 </head>
 <body>
@@ -228,65 +304,81 @@ footer{
 <div class="stars"></div>
 
 <section class="hero">
+
     <h1>❤️ Para o Amor da Minha Vida ❤️</h1>
+
     <p>
-        Este site foi feito especialmente para você.
-        Cada foto, cada detalhe e cada animação foram colocados aqui
-        para mostrar o quanto você é importante para mim.
+        Este site foi criado especialmente para você.
+        Cada detalhe foi pensado com carinho para mostrar
+        o quanto você é importante para mim.
     </p>
 
     <button class="botao" onclick="mostrarMensagem()">
-        Clique Aqui
+        Clique Aqui ❤️
     </button>
+
 </section>
 
-<section class="galeria">
+<section class="reveal">
+
     <h2 class="titulo">Nossos Momentos</h2>
 
     <div class="fotos">
+
         <div class="card">
-            <img src="foto1.jpg">
+            <img src="foto1.jpg" alt="">
         </div>
 
         <div class="card">
-            <img src="foto2.jpg">
+            <img src="foto2.jpg" alt="">
         </div>
 
         <div class="card">
-            <img src="foto3.jpg">
+            <img src="foto3.jpg" alt="">
         </div>
 
         <div class="card">
-            <img src="foto4.jpg">
+            <img src="foto4.jpg" alt="">
         </div>
+
     </div>
+
 </section>
 
-<section class="carta">
+<section class="reveal">
+
     <h2 class="titulo">Uma Mensagem</h2>
 
     <p class="texto">
         Você é uma das melhores coisas que já aconteceram na minha vida.
-        Seu sorriso ilumina meus dias, sua presença torna tudo melhor
-        e cada momento ao seu lado se transforma em uma lembrança especial.
-        Obrigado por existir e por fazer parte da minha história.
+        Seu sorriso ilumina meus dias e sua presença torna tudo melhor.
+        Obrigado por existir e fazer parte da minha história.
     </p>
+
 </section>
-<section class="surpresa">
-    <h2>🎁 Tenho uma Surpresa Para Você</h2>
 
-    <p>
-        Clique no botão abaixo quando estiver pronto para descobrir.
-    </p>
+<section class="surpresa reveal">
 
-    <a href="https://srturl.link/oXor2ZrvyG" class="btn-surpresa">
-        ✨ Clique Aqui Para Ver a Surpresa ✨
+    <h2 class="titulo">🎁 Uma Surpresa</h2>
+
+    <p>Clique no botão abaixo quando estiver pronto.</p>
+
+    <a
+        href="https://srturl.link/MfgmTOGexA"
+        target="_blank"
+        class="btn-surpresa"
+    >
+        ✨ Ver Surpresa ✨
     </a>
+
 </section>
-<section class="contador">
+
+<section class="contador reveal">
+
     <h2 class="titulo">Eu Te Amo Há</h2>
-    <div class="numero" id="dias">0</div>
-    <p>Dias</p>
+
+    <div id="tempo"></div>
+
 </section>
 
 <footer>
@@ -295,43 +387,106 @@ footer{
 
 <script>
 
-// estrelas
+// ESTRELAS
 
-for(let i=0;i<100;i++){
-    const star = document.createElement("div");
+for(let i=0;i<150;i++){
+
+    const star=document.createElement("div");
+
     star.classList.add("star");
 
-    star.style.left = Math.random()*100+"%";
-    star.style.top = Math.random()*100+"%";
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
 
-    star.style.animationDelay = Math.random()*5+"s";
+    star.style.animationDelay=Math.random()*5+"s";
 
-    document.querySelector(".stars").appendChild(star);
+    document.querySelector(".stars")
+    .appendChild(star);
 }
 
-// mensagem
+// CORAÇÕES
+
+setInterval(()=>{
+
+    const coracao=document.createElement("div");
+
+    coracao.classList.add("coracao");
+    coracao.innerHTML="❤";
+
+    coracao.style.left=Math.random()*100+"%";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(()=>{
+        coracao.remove();
+    },6000);
+
+},500);
+
+// POPUP
 
 function mostrarMensagem(){
-    alert("Você é a pessoa mais especial do mundo ❤️");
+
+    const popup=document.createElement("div");
+
+    popup.className="popup-bg";
+
+    popup.innerHTML=`
+        <div class="popup">
+            <h2>❤️</h2>
+            <p>
+                Você é a pessoa mais especial da minha vida.
+                Obrigado por existir.
+            </p>
+            <button onclick="this.closest('.popup-bg').remove()">
+                Fechar
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(popup);
 }
 
-// contador
+// CONTADOR
 
-const dataInicio = new Date("2025-01-01");
+const dataInicio=new Date("2025-01-01");
 
-function atualizarDias(){
-    const hoje = new Date();
+function atualizarTempo(){
 
-    const diferenca =
-    hoje - dataInicio;
+    const agora=new Date();
 
-    const dias =
-    Math.floor(diferenca / (1000*60*60*24));
+    const diff=agora-dataInicio;
 
-    document.getElementById("dias").innerText = dias;
+    const dias=Math.floor(diff/86400000);
+    const horas=Math.floor(diff/3600000)%24;
+    const minutos=Math.floor(diff/60000)%60;
+    const segundos=Math.floor(diff/1000)%60;
+
+    document.getElementById("tempo").innerHTML=
+    `${dias} dias<br>${horas}h ${minutos}m ${segundos}s`;
 }
 
-atualizarDias();
+setInterval(atualizarTempo,1000);
+atualizarTempo();
+
+// REVEAL
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+    reveals.forEach(el=>{
+
+        if(
+            el.getBoundingClientRect().top
+            < window.innerHeight-100
+        ){
+            el.classList.add("ativo");
+        }
+
+    });
+
+});
 
 </script>
 
